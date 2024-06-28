@@ -1,0 +1,249 @@
+{
+  "namespace": "default",
+  "name": "voting_contract",
+  "description": "Spec interface for the voting chaincode",
+  "version": "1.0",
+  "methods": [
+    {
+      "name": "CreateVoter",
+      "pathname": "",
+      "description": "Create a new voter",
+      "params": [
+        {
+          "name": "nic",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "name",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "voterID",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "biometricTemplate",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "CreateElection",
+      "pathname": "",
+      "description": "Create a new election",
+      "params": [
+        {
+          "name": "electionID",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "startTime",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "endTime",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "contractAddress",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "AssignVoterToElection",
+      "pathname": "",
+      "description": "Assign a voter to an election",
+      "params": [
+        {
+          "name": "voterID",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "electionID",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "eligibility",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "pollingStation",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "RecordVote",
+      "pathname": "",
+      "description": "Record a vote for a voter in an election",
+      "params": [
+        {
+          "name": "voterID",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "electionID",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "GetVoter",
+      "pathname": "",
+      "description": "Retrieve voter information",
+      "params": [
+        {
+          "name": "voterID",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "name": "",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "nic": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "voterID": {
+                "type": "string"
+              },
+              "biometricTemplate": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "GetElection",
+      "pathname": "",
+      "description": "Retrieve election information",
+      "params": [
+        {
+          "name": "electionID",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "name": "",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "electionID": {
+                "type": "string"
+              },
+              "startTimestamp": {
+                "type": "string"
+              },
+              "endTimestamp": {
+                "type": "string"
+              },
+              "contractAddress": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "GetVoterElectionRelation",
+      "pathname": "",
+      "description": "Retrieve the relationship between a voter and an election",
+      "params": [
+        {
+          "name": "voterID",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "electionID",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "name": "",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "voterID": {
+                "type": "string"
+              },
+              "electionID": {
+                "type": "string"
+              },
+              "eligibility": {
+                "type": "boolean"
+              },
+              "voted": {
+                "type": "boolean"
+              },
+              "pollingStation": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "VoterCreated"
+    },
+    {
+      "name": "ElectionCreated"
+    },
+    {
+      "name": "VoteRecorded"
+    }
+  ]
+}

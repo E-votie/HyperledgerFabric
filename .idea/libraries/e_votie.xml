@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="e_votie">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/voting-chaincode/e_votie.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

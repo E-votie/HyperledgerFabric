@@ -1,0 +1,10 @@
+{
+  "name": "e_votie",
+  "interface": {
+    "id": "f1e5522c-59a5-4787-bbfd-89975e5b0954"
+  },
+  "location": {
+    "channel": "firefly",
+    "chaincode": "e_votie"
+  }
+}
